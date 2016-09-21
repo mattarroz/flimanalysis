@@ -1,0 +1,13 @@
+
+- alle histogramme sollten abgespeichert werden (Messung, Fit, irf, residuals) (brauch ich dafür auch ne option in der ini?)
+- wenn keine irfrois (rois) in der ini angegeben sind, fehler ausspucken
+- option um den FLIM fit auszuschalten
+- option für verbosity zur laufzeit (sollte nicht über #define DEBUG alles gemacht werden)
+- eigentlich bräuchte man eine möglichkeit um an dem fit rumzuspielen, während die daten im speicher sind
+   * wie könnte man das einfach realisieren??? (vielleicht über stdin die kommunikation mit labview regeln? oder vielleicht irgendeine interprozess kommunikation?)
+- die formats sollten durch Makros ausgetauscht werden, damit die printf kommandos austauschbar zwischen 32 und 64 bit werden (ausserdem bin ich dann die warnings los)
+
+QADATA Support:
+	* dafür bräuchte ich einen qadata-tiff wandler (eigentlich kein problem, müsste man aber erstmal machen)
+	* muss auch nicht unbedingt ein wandler sein, kann auch einfach die qa daten lesen und dann ohne roi erstmal flim bilder ausgeben ?
+	* 

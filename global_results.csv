@@ -1,0 +1,10 @@
+ROI	Parameter	Fitted value
+0	"BG"	0.000000
+0	"IRFSHIFT"	-nan
+0	"Amp0"	-nan
+0	"Life0"	-nan
+0	"Amp1"	-nan
+0	"Life1"	-nan
+0	"Chi square"	231096.432796
+-	"Global Chi square"	231152.921780
+FitType was Maximum-Likelihood for Poisson distribution.

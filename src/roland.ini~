@@ -1,0 +1,73 @@
+# Caution: cASE sENSiTiVE !!!!
+
+[Globals]
+# Unit: ps
+tcal = 10.9
+# Unit: MHz
+tabsclock = 14.318
+# Unit: us
+pixeldwelltime = 40
+width = 512
+height = 512
+# samples per histogram
+samples = 4096
+threshold = 0
+#qadata = "qatest2.QAData"
+#qadata = "../../Measurements/05.11/Oxi-PIE.QAData"
+#irf = "../../Measurements/05.11/Irf-PIE-Final.QAData"
+# data format can be QA or pt3
+dataformat = pt3
+#irf = "./testdata/irfQA.QAData"
+#qadata = "./testdata/fretshortgreen.QAData"
+pt3data = "~/2013-07-31 cells for MR/LSM_1.pt3"
+irf = "~/2013-07-31 cells for MR/SPAD1 - 485IRF.pt3"
+irfrois = 1
+#enter a number or the word "file" (without doubleqoutes) if ROIs are defined in tiff file
+rois = 1
+roifile_tiff = "./1012_objects.tiff"
+# Units: ms
+tabsstart = 0
+tabsstop = -1
+
+# fittype = mle|chisq_equal_wt|chisq_neyman
+allrois = yes
+fittype = "mle"
+nexp = 2
+nlinks = 3
+link[0] = 400.0
+amp[0] = 0.8
+link[1] = 1000.0
+amp[1] = 0.2
+#irfshift = 0.1
+# irfshift is linked between all ROIs
+link[2] = 13.0
+background = fix(0.0)
+tstart = 0
+tstop = 4095
+
+
+[IRFROI0]
+roitype = rectangle
+rectangle.xtop = 205
+rectangle.ytop = 239
+rectangle.xbottom = 240
+rectangle.ybottom = 250
+tstart = 620
+tstop = 880
+
+
+[ROI0]
+roitype = rectangle
+rectangle.xtop = 0
+rectangle.ytop = 0
+rectangle.xbottom = 255
+rectangle.ybottom = 255
+lifetime[0] = 1.0
+amp[0] = 0.2
+lifetime[1] = link[0]
+amp[1] = 0.3
+lifetime[2] = link[1]
+amp[2] = 0.5
+irfshift = 0.0
+irf = irfroi[0]
+background = fix(0)
