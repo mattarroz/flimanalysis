@@ -15,5 +15,5 @@ Ted A Laurence & Brett A Chromy,
 Efficient maximum likelihood estimator fitting of histograms,
 Nature Methods 7,	338–339	(1 May 2010) | doi:10.1038/nmeth0510-338
 
-See https://ford.biologie.hu-berlin.de/matze/flimanalysis/wikis/home for more
+See https://github.com/mattarroz/flimanalysis/wiki for more
 information.
