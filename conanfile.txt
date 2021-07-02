@@ -1,0 +1,6 @@
+[requires]
+glib/[>=2.0]
+libtiff/[>=4.0]
+
+[generators]
+cmake

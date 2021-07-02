@@ -52,19 +52,6 @@ int readQA(char *filename, char *filename_irf, uint64_t offset,
 		printf("Error: Unexpected end of file.\n");
 		return 0;
 	}
-	
-/*
-    fopen ("qatest3.QAData", "wb");
-    fwrite(h, 1, 256, f);    
-    nphotons = 400;
-    for (i = 0; i < nphotons; i++) {
-    	fwrite(&i,1,4,f); 
-	fwrite(&i,1,4,f);
-	fwrite(&i,1,2,f);
-	fwrite(&i,1,4,f);
-    }
-    fclose (f);
-    filename = "qatest3.QAData";*/
 
 	fseek(f, 256 + offset * 14, SEEK_SET);
 	p = (uint8_t *) calloc(1, 14);
@@ -234,27 +221,12 @@ int readQA(char *filename, char *filename_irf, uint64_t offset,
 	free(p);
 	return 1;
 }
-/*
-int PrintPhot(QAData * q)
-{
-    uint64_t i;
-    for (i = 0; i < q->NP; i++) {
-	printf("%d) x=%d y=%d TAC=%huT=%lu\n", i, q->p[i].x, q->p[i].y,
-	       q->p[i].TAC, q->p[i].T);
-
-    }
-    return 1;
-}*/
-
-
 
 int writeQAData(char* filename,uint64_t offset,
 		FLIM_measurement *m, uint8_t *h)
-//QAData* q,int* frame,int id)
 {
 	FILE* f;
 	uint64_t i, j, counter = 256;
-	// char buf[14]="";
 	uint32_t TAC = 0;
 	uint64_t TAbs = 0;
 	GSList *photon;

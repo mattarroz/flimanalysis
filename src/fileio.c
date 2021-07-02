@@ -952,11 +952,6 @@ read_globals_file (Histogram * measure, Model * conv_mdl, char *fname)
 		measure->irf += conv_mdl->tstart;
 		conv_mdl->nsamples = conv_mdl->tstop - conv_mdl->tstart;
 		measure->nsamples = conv_mdl->tstop - conv_mdl->tstart;
-		/*
-	memset (&(measure->sample[conv_mdl->tstop]), 0.0, (nsamples-conv_mdl->tstop) * sizeof(double));
-	memset (&(measure->sample), 0.0, conv_mdl->tstart * sizeof(double));
-	memset (&(measure->sample[conv_mdl->tstop]), 0.0, (nsamples-conv_mdl->tstop) * sizeof(double));
-	memset (&(measure->sample[0]), 0.0, conv_mdl->tstart * sizeof(double));*/
 		conv_mdl->irf = measure->irf;
 		printf ("  done.\n");
 	}
@@ -1011,7 +1006,6 @@ readfile (char file[], uint64_t rowstart, uint64_t length,
 	char line[100];
 	int counter = 0;		//zeilenzähler
 
-	//      printf("Starte einlesen: ab %d. zeile, für %d Zeilen\n",rowstart,length);
 	if ((stream = fopen (file, "r")) != NULL)
 	{
 		while (!feof (stream))
@@ -1107,14 +1101,8 @@ write2expfile (double *amp, double *lifetime, double *meanamp,
 
 	printf ("Beginning to write statistical data into file...\n");
 	fp = fopen ("./2expamp.bin", "w");
-	// write header
-	/*    fprintf (fp, "\t");
-    for (i = 0; i < nmodels; i++) {
-	fprintf (fp, "%f\t", amp[0]);
-	amp += 2;
-    }
 
-    fprintf (fp, "\n\n");*/
+	// write header
 	for (j = 0; j < nmodels; j++)
 	{
 		for (i = 0; i < ndifcounts; i++)
@@ -1325,6 +1313,4 @@ write_levmar_result (FLIM_measurement * m, double *info)
 	fclose (fp);
 
 	free (function);
-
-	return;
 }

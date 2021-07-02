@@ -5,7 +5,6 @@
 
 double norm_histogram (double *histogram, uint64_t ntchannels, double ncounts);
 double norm_histogram_peak (double *histogram, uint64_t ntchannels, uint64_t ncounts);
-//void shift_histogram (double *histogram, UINT total_size, UINT *start, UINT *end, double offset);
 int shift_histogram (double *a, int N, double s);
 
 double calc_ncounts (double *histogram, uint64_t size);

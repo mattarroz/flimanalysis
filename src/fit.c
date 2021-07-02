@@ -74,19 +74,10 @@ jac_log_exp (void (*func) (double *p, double *hx, int m, int n, void *adata),
 void
 free_convolution_par (Model * conv_mdl)
 {
-//    UINT i;
-/*
-    free (conv_mdl->pvar);
-    for (i = 0; i < conv_mdl->nexp; i++) free (conv_mdl->pdf[i]);
-    free(conv_mdl->pdf);
-*/
   free (conv_mdl->irf);
   free (conv_mdl->shifted_irf);
   free (conv_mdl->darknoise);
-//    free(conv_mdl->par);
   free (conv_mdl);
-
-  return;
 }
 
 
@@ -96,8 +87,6 @@ free_measurement (Histogram * measure)
   free (measure->sample);
 
   free (measure);
-
-  return;
 }
 
 /* a wrapper around dlevmar_mle_diff (Extended Levenberg-Marquardt Algorithm by Lawrence et al.
